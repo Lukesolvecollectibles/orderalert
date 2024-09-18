@@ -1,0 +1,83 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0);
+            font-family: Arial, sans-serif;
+        }
+        .alert-box {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: none; /* Initially hidden */
+        }
+        .input-container {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 20px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin-left: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Alert box to display the message -->
+    <div class="alert-box" id="alert-message">
+        <!-- Message will go here -->
+    </div>
+
+    <!-- Input field and button for user to input message -->
+    <div class="input-container">
+        <input type="text" id="customMessage" placeholder="Enter your message here...">
+        <button onclick="showAlert()">Show Message</button>
+    </div>
+
+    <script>
+        function showAlert() {
+            // Get the value of the text input
+            var message = document.getElementById("customMessage").value;
+
+            // Display the alert box and show the message
+            var alertBox = document.getElementById("alert-message");
+            alertBox.innerText = message;
+            alertBox.style.display = "block"; // Show the alert box
+
+            // Optionally, hide the alert after a few seconds (e.g., 5 seconds)
+            setTimeout(function() {
+                alertBox.style.display = "none"; // Hide the alert box
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
